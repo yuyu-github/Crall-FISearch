@@ -17,7 +17,6 @@ function createMainWindow() {
   if (env.TYPE == 'debug') {
     //デバッグ時のみデバッグメニューを表示
     mainWindow.setMenu(Menu.buildFromTemplate([
-      ...require('./menu.js')(mainWindow),
       {
         label: 'デバッグ',
         submenu: [
