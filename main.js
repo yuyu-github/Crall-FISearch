@@ -30,12 +30,16 @@ function createMainWindow() {
 
   mainWindow.loadFile('renderer/main/index.html');
 
-  mainWindow.on('closed', () => {
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  })
+
+  mainWindow.once('closed', () => {
     mainWindow = null;
   });
 }
 
-app.on('ready', createMainWindow);
+app.once('ready', createMainWindow);
 
 app.on('activate', () => {
   if (mainWindow === null) {
