@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+.search-area {
+  display: flex;
+  flex: 0;
+  margin: 12px;
+  height: 28px;
+}
+
+.search-area > .search-box {
+  flex: 1
+}
+
+.search-area > .search-button {
+  margin-left: 10px;
+  width: 80px;
+}
