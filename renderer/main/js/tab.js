@@ -11,6 +11,7 @@ export function createTab() {
   searchBoxEl.classList.add('search-box');
   searchArea.appendChild(searchBoxEl);
   let searchButtonEl = document.createElement('button');
+  searchButtonEl.innerHTML = '検索';
   searchButtonEl.classList.add('search-button');
   searchArea.appendChild(searchButtonEl)
   displayedTab.appendChild(searchArea);

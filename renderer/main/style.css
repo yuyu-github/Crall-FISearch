@@ -6,14 +6,21 @@ body {
   display: flex;
   flex: 0;
   margin: 12px;
-  height: 28px;
+  height: 32px;
+  max-width: 800px;
 }
 
 .search-area > .search-box {
-  flex: 1
+  flex: 1;
+  font-size: 15px;
+  padding: 6px;
 }
 
 .search-area > .search-button {
   margin-left: 10px;
   width: 80px;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  border: 1px black solid;
+  border-radius: 4px;
 }
