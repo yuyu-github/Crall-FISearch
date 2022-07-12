@@ -1,7 +1,10 @@
-export let displayedTab = null;
+export let currentTab;
+export let currentTabId;
 
 export function createTab() {
-  displayedTab = document.getElementById('tabs').appendChild(document.createElement('div'));
+  currentTab = document.getElementById('tabs').appendChild(document.createElement('div'));
+  currentTabId = new Date().getTime() * Math.floor(Math.random() * 100);
+  currentTab.dataset.tabId = currentTabId;
 
   //検索ボックス・検索ボタンを追加
   let searchArea = document.createElement('div'); //Flexを使うためdivの中に入れる
@@ -14,5 +17,9 @@ export function createTab() {
   searchButtonEl.innerHTML = '検索';
   searchButtonEl.classList.add('search-button');
   searchArea.appendChild(searchButtonEl)
-  displayedTab.appendChild(searchArea);
+  currentTab.appendChild(searchArea);
+
+  let modesEl = document.createElement('div');
+  modesEl.classList.add('modes');
+  currentTab.appendChild(modesEl)
 }
