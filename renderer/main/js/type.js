@@ -4,11 +4,11 @@ export let currentMode = 'file';
 export let currentModeEl = null;
 
 export function createModeEl() {
-  let modes = ['file'];
+  let types = ['file'];
 
-  for (let mode of modes) {
-    let modeEl = document.createElement('div');
-    modeEl.classList.add('file');
+  for (let mode of types) {
+    let typeEl = document.createElement('div');
+    typeEl.classList.add('types');
     
     switch (mode) {
       case 'file': {
@@ -16,12 +16,12 @@ export function createModeEl() {
       }
     }
 
-    currentTab.getElementsByClassName('modes')[0].appendChild(modeEl);
+    currentTab.getElementsByClassName('types')[0].appendChild(typeEl);
   }
 }
 
 export function setMode(mode) {
-  let modeEl = currentTab.querySelector('.modes > .' + mode)
+  let modeEl = currentTab.querySelector('.types > .' + mode)
   if (modeEl == null) {
     createModeEl();
     setMode(mode);
