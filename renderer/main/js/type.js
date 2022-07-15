@@ -1,16 +1,16 @@
 import { currentTab } from "./tab.js";
 
-export let currentMode = 'file';
-export let currentModeEl = null;
+export let currentType = 'file';
+export let currentTypeEl = null;
 
-export function createModeEl() {
+export function createTypeEl() {
   let types = ['file'];
 
-  for (let mode of types) {
+  for (let type of types) {
     let typeEl = document.createElement('div');
-    typeEl.classList.add('types');
+    typeEl.classList.add(type);
     
-    switch (mode) {
+    switch (type) {
       case 'file': {
         
       }
@@ -20,17 +20,17 @@ export function createModeEl() {
   }
 }
 
-export function setMode(mode) {
-  let modeEl = currentTab.querySelector('.types > .' + mode)
-  if (modeEl == null) {
-    createModeEl();
-    setMode(mode);
+export function setType(type) {
+  let typeEl = currentTab.querySelector('.types > .' + type)
+  if (typeEl == null) {
+    createTypeEl();
+    setType(type);
     return;
   }
 
-  currentModeEl?.classList?.remove?.('displayed')
-  modeEl.classList.add('displayed');
+  currentTypeEl?.classList?.remove?.('displayed')
+  typeEl.classList.add('displayed');
 
-  currentMode = mode;
-  currentModeEl = modeEl;
+  currentType = type;
+  currentTypeEl = typeEl;
 }

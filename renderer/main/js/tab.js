@@ -20,6 +20,6 @@ export function createTab() {
   currentTab.appendChild(searchArea);
 
   let modesEl = document.createElement('div');
-  modesEl.classList.add('modes');
+  modesEl.classList.add('types');
   currentTab.appendChild(modesEl)
 }
